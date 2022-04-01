@@ -5,7 +5,7 @@ import "erc721a/contracts/ERC721A.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DimsumDaily is ERC721A, Ownable {
-    uint256 public price = 0.08 ether;
+    uint256 public price;
     string internal _uri;
 
     event Deploy();

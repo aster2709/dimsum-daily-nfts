@@ -1,18 +1,14 @@
+import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
 
 const func: DeployFunction = async (hre): Promise<void> => {
   const { deployer } = await hre.getNamedAccounts();
-  await hre.deployments.deploy("Box", {
+  await hre.deployments.deploy("DimsumDaily", {
     from: deployer,
     log: true,
-    proxy: {
-      execute: {
-        methodName: "initialize",
-        args: [42],
-      },
-    },
+    args: [ethers.utils.parseEther("0.08"), "some-uri"],
   });
 };
 
 export default func;
-func.tags = ["Box"];
+func.tags = ["DimsumDaily"];
