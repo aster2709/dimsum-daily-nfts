@@ -14,8 +14,8 @@ const config: HardhatUserConfig = {
   solidity: "0.8.13",
   namedAccounts: { deployer: 0 },
   networks: {
-    polygon_testnet: {
-      url: process.env.POLYGON_TESTNET_RPC,
+    rinkeby: {
+      url: process.env.RPC,
       accounts: [process.env.DEPLOYER_PRIVATE_KEY],
     },
   },

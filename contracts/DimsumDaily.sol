@@ -2,11 +2,16 @@
 pragma solidity 0.8.13;
 
 import "erc721a/contracts/ERC721A.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "./utils/Whitelist.sol";
 
-contract DimsumDaily is ERC721A, Ownable {
+contract DimsumDaily is ERC721A, Whitelist {
     uint256 public price;
     string internal _uri;
+    enum SaleType {
+        Private,
+        Public
+    }
+    SaleType public saleType;
 
     event Deploy();
 
@@ -19,12 +24,26 @@ contract DimsumDaily is ERC721A, Ownable {
     }
 
     function buy(uint256 _quantity) public payable {
+        if (saleType == SaleType.Private) {
+            require(whitelist[msg.sender], "You are not whitelisted");
+        }
         require(msg.value == _quantity * price, "Invalid price");
         _safeMint(msg.sender, _quantity);
     }
 
     function setPrice(uint256 _price) public onlyOwner {
         price = _price;
+    }
+
+    function setSaleType(SaleType _saleType) public onlyOwner {
+        saleType = _saleType;
+    }
+
+    function switchToPublicSale(uint256 _price) public onlyOwner {
+        require(saleType == SaleType.Private, "Already in public sale");
+        require(_price > 0, "Invalid price");
+        setPrice(_price);
+        setSaleType(SaleType.Public);
     }
 
     function setUri(string memory uri_) public onlyOwner {
