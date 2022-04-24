@@ -1,23 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.13;
 
-import "erc721a/contracts/ERC721A.sol";
-import "./utils/Whitelist.sol";
+import "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol";
+import "./utils/WhitelistUpgradeable.sol";
 
-contract DimsumDaily is ERC721A, Whitelist {
-    uint256 public price;
-    string internal _uri;
+contract DimsumDaily is ERC721AUpgradeable, WhitelistUpgradeable {
     enum SaleType {
         Private,
         Public
     }
+
     SaleType public saleType;
+    uint256 public price;
+    string internal _uri;
+
+    // add state vars below
+
+    // add state vars above
 
     event Deploy();
 
-    constructor(uint256 _price, string memory uri_)
-        ERC721A("Dimsum Daily", "DIMSUM")
-    {
+    function initialize(uint256 _price, string calldata uri_) external initializer {
+        __ERC721A_init("Dimsum Daily NFTs", "DDS");
         price = _price;
         _uri = uri_;
         emit Deploy();

@@ -1,10 +1,14 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.13;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
-contract Whitelist is Ownable {
+contract WhitelistUpgradeable is OwnableUpgradeable {
     mapping(address => bool) public whitelist;
+    // add state vars below
+
+    // add state vars above
+
     event Whitelisted(address indexed account);
     event Unwhitelisted(address indexed account);
 
