@@ -12,9 +12,9 @@
         }
     ],
     "impls": {
-        "ec9d34033aacc2afd47e552486ca1585d722b2a98149f80f154d292ad888558b": {
+        "f40441b739246f79ad71455a7c5d3fa3625717cf02085667ca7c446abbf39865": {
             "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-            "txHash": "0xb2fbae92ef60cf12f6e46a6f6afa686324a18469cf14c03b9b60806f4b242361",
+            "txHash": "0xae678cedd975869596d8c1c3b4e816f6a119a35483539a09726d0155f441574f",
             "layout": {
                 "storage": [
                     {
@@ -150,24 +150,24 @@
                         "offset": 0,
                         "slot": "202",
                         "type": "t_enum(SaleType)913",
-                        "contract": "DimsumDaily",
-                        "src": "contracts/DimsumDaily.sol:13"
+                        "contract": "DSD_NFT",
+                        "src": "contracts/DSD_NFT.sol:13"
                     },
                     {
                         "label": "price",
                         "offset": 0,
                         "slot": "203",
                         "type": "t_uint256",
-                        "contract": "DimsumDaily",
-                        "src": "contracts/DimsumDaily.sol:14"
+                        "contract": "DSD_NFT",
+                        "src": "contracts/DSD_NFT.sol:14"
                     },
                     {
                         "label": "_uri",
                         "offset": 0,
                         "slot": "204",
                         "type": "t_string_storage",
-                        "contract": "DimsumDaily",
-                        "src": "contracts/DimsumDaily.sol:15"
+                        "contract": "DSD_NFT",
+                        "src": "contracts/DSD_NFT.sol:15"
                     }
                 ],
                 "types": {
@@ -192,7 +192,7 @@
                         "numberOfBytes": "1"
                     },
                     "t_enum(SaleType)913": {
-                        "label": "enum DimsumDaily.SaleType",
+                        "label": "enum DSD_NFT.SaleType",
                         "members": ["Private", "Public"],
                         "numberOfBytes": "1"
                     },

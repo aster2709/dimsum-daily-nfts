@@ -1,4 +1,4 @@
-# Dimsum Daily NFTs
+# DSD NFTs
 
 -   WIP: Solidity smart contracts for Dimsum Daily NFTs
 -   Features

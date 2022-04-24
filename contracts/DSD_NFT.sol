@@ -4,7 +4,7 @@ pragma solidity 0.8.13;
 import "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol";
 import "./utils/WhitelistUpgradeable.sol";
 
-contract DimsumDaily is ERC721AUpgradeable, WhitelistUpgradeable {
+contract DSD_NFT is ERC721AUpgradeable, WhitelistUpgradeable {
     enum SaleType {
         Private,
         Public
@@ -21,7 +21,7 @@ contract DimsumDaily is ERC721AUpgradeable, WhitelistUpgradeable {
     event Deploy();
 
     function initialize(uint256 _price, string calldata uri_) external initializer {
-        __ERC721A_init("Dimsum Daily NFTs", "DDS");
+        __ERC721A_init("Dimsum Daily NFTs", "DSD");
         price = _price;
         _uri = uri_;
         emit Deploy();
